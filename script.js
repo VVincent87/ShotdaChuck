@@ -18,6 +18,7 @@ document.querySelector('#boardGen').addEventListener('click', () => {
         cell.style.height = 100/(Math.sqrt(boardSize)) + '%';
     });
     nextTurn();
+    generalTimer();
 })
 
 function nextTurn (){
@@ -48,3 +49,26 @@ gameboard.addEventListener('click',(el) => {
     }
     popChuck();
 })
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+function generalTimer () {
+    var oneMinute = 60 * 1,
+        display = document.querySelector('#time');
+    startTimer(oneMinute, display);
+};
