@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+.none {
+    display: none;
+}
+
+.container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+#gameboard {
+    height: 800px;
+    width: 800px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    border: 0.5px solid black;
+    box-sizing: border-box;
+    background-size: cover;
+}
+
+h2 {
+    color:red;
+}
